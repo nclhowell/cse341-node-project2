@@ -1,0 +1,69 @@
+### Week 2
+GET http://localhost:8080/mountainBikes
+
+###
+GET http://localhost:8080/mountainBikes/634a144574f98f9898ebe8c4
+
+### Render Week 2
+GET https://cse341-node-lhowell.onrender.com/mountainBikes
+
+###
+GET https://cse341-node-lhowell.onrender.com/mountainBikes/63332cdc93c226a20333dfe1
+
+### Week 3
+POST http://localhost:8080/mountainBikes HTTP/1.1
+content-type: application/json
+
+ {
+    "manufacturer": "Walmart",
+    "model": "Junker2000",
+    "discipline": "yard-only",
+    "frontTravel": "2-inches",
+    "rearTravel": "none",
+    "brakes": "house-brand-mechanical",
+    "terrainPreference": "smooth-grass"
+  }
+
+###
+PUT http://localhost:8080/mountainBikes/634a23ed61b8c75a12741dc9 HTTP/1.1
+content-type: application/json
+
+  {
+    "manufacturer": "Costco",
+    "model": "BikePath-2022",
+    "discipline": "smooth bike paths",
+    "frontTravel": "3-inches",
+    "rearTravel": "3-inches",
+    "brakes": "house-brand-mechanical",
+    "terrainPreference": "bumpy-dirt"
+  }
+
+###
+DELETE http://localhost:8080/mountainBikes/634a23ed61b8c75a12741dc9
+
+### Render Week 3 
+POST http://cse341-node-lhowell.onrender.com/mountainBikes HTTP/1.1
+content-type: application/json
+
+{
+   "firstName":"Shmedley",
+   "lastName":"Dunbar",
+   "email":"sdunbar@whatif.com",
+   "favoriteColor":"Brown",
+   "birthday":"10031956"
+}
+
+###
+PUT http://cse341-node-lhowell.onrender.com/mountainBikes/633cdd535ad9161c27e7b6ec HTTP/1.1
+content-type: application/json
+
+{
+   "firstName":"ShmdedleyII",
+   "lastName":"DunbarII",
+   "email":"sdunbarII@gmail.com",
+   "favoriteColor":"GreenII",
+   "birthday":"100756"
+}
+
+###
+DELETE http://cse341-node-lhowell.onrender.com/mountainBikes/633e2cf04d9cbc0d53f44957

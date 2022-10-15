@@ -1,0 +1,58 @@
+[
+  {
+    "manufacturer": "Specialized",
+    "model": "Enduro",
+    "discipline": "enduro",
+    "frontTravel": "6-inches",
+    "rearTravel": "7-inches",
+    "brakes": "shimano-hydraulic",
+    "terrainPreference": "gnar"
+  },
+  {
+    "manufacturer": "Giant",
+    "model": "Reign",
+    "discipline": "trail",
+    "frontTravel": "5-inches",
+    "rearTravel": "5-inches",
+    "brakes": "sram-hydraulic",
+    "terrainPreference": "trail"
+  },
+  {
+    "manufacturer": "Yeti",
+    "model": "SB-130",
+    "discipline": "trail",
+    "frontTravel": "5-inches",
+    "rearTravel": "5-inches",
+    "brakes": "hope-hydraulic",
+    "terrainPreference": "low-gnar"
+  }
+]
+
+
+[
+  {
+    "type": "brakes",
+    "manufacturer": "Sram",
+    "model": "Code-R",
+    "discipline": "enduro"
+  },
+  {
+    "type": "brakes",
+    "manufacturer": "Shimano",
+    "model": "XT",
+    "discipline": "trail"
+  },
+  {
+    "type": "brakes",
+    "manufacturer": "Hope",
+    "model": "Tech-3",
+    "discipline": "enduro"
+  },
+  {
+    "type": "brakes",
+    "manufacturer": "Tektro",
+    "model": "HD-M285",
+    "discipline": "trail"
+}
+]
+
