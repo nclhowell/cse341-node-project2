@@ -5,6 +5,10 @@ const mongodb = require('./db/connect');
 const port = process.env.PORT || 3000;
 const app = express();
 
+process.on('uncaughtException', (err, origin) => {
+  console.log(process.stderr.fd, `Gotcha exception: ${err}\n` + `Origin: ${origin}`);
+}); 
+
 app
   .use(bodyParser.json())
   .use((req, res, next) => {
