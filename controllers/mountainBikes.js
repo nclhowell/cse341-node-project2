@@ -103,7 +103,7 @@ const getAll = (req, res) => {
       res.status(201).json(response);
     } else {
       res
-        .status(500)
+        .status(550)
         .json(
           response.error ||
             "Some error occurred while creating the mountainBike."
