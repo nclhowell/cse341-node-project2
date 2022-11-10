@@ -1,58 +1,48 @@
-[
+bikes [
   {
     "manufacturer": "Specialized",
     "model": "Enduro",
     "discipline": "enduro",
     "frontTravel": "6-inches",
     "rearTravel": "7-inches",
-    "brakes": "shimano-hydraulic",
-    "terrainPreference": "gnar"
+    "ridingStyle": "rookie",
+    "terrainPreference": "hard"
   },
+helmets [
   {
-    "manufacturer": "Giant",
-    "model": "Reign",
-    "discipline": "trail",
-    "frontTravel": "5-inches",
-    "rearTravel": "5-inches",
-    "brakes": "sram-hydraulic",
-    "terrainPreference": "trail"
-  },
+    "manufacturer": "Specialized super Helmet",
+    "model": "Enduro",
+    "discipline": "enduro",
+    "frontTravel": "6-inches",
+    "rearTravel": "7-inches",
+    "ridingStyle": "rookie",
+    "terrainPreference": "hard"
+
+shoes [
   {
-    "manufacturer": "Yeti",
-    "model": "SB-130",
-    "discipline": "trail",
-    "frontTravel": "5-inches",
-    "rearTravel": "5-inches",
-    "brakes": "hope-hydraulic",
-    "terrainPreference": "low-gnar"
-  }
-]
+    "manufacturer": "Specialized super Shoes",
+    "model": "Enduro",
+    "discipline": "enduro",
+    "frontTravel": "6-inches",
+    "rearTravel": "7-inches",
+    "ridingStyle":  "rookie",
+    "terrainPreference": "hard"
+
+    user {
+     name: "joe"
+     email: "rookie"
+     ridingStyle: "rookie"
+     terrainPreference: "rookie"
+     recommended_bike: "Specialized Enduro"
+     recommended_shoes: "Specialized super Shoes"
+     recommended_helmet: "Specialized super helmet"
+    }
+
+    bike = Get manufacturer from bikes collection where ridingStyle = "rookie"
+    helmet = Get manufacturer from helmets collection where ridingStyle = "rookie"
+    shoes = Get manufacturer from shoes collection where ridingStyle = "rookie"
 
 
-[
-  {
-    "type": "brakes",
-    "manufacturer": "Sram",
-    "model": "Code-R",
-    "discipline": "enduro"
-  },
-  {
-    "type": "brakes",
-    "manufacturer": "Shimano",
-    "model": "XT",
-    "discipline": "trail"
-  },
-  {
-    "type": "brakes",
-    "manufacturer": "Hope",
-    "model": "Tech-3",
-    "discipline": "enduro"
-  },
-  {
-    "type": "brakes",
-    "manufacturer": "Tektro",
-    "model": "HD-M285",
-    "discipline": "trail"
-}
-]
 
+    
+  

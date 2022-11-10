@@ -1,11 +1,14 @@
 ### GET Week 6 
-GET http://localhost:8080/mountainBikes
+GET http://localhost:3000/mountainBikes
 
 ###
-GET http://localhost:8080/mountainBikes/634a144574f98f9898ebe8c4
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/mountainBikes/634a144574f98f9898ebe8c4
 
 ### POST and PUT Week 6 
-POST http://localhost:8080/mountainBikes HTTP/1.1
+POST http://localhost:3000/mountainBikes HTTP/1.1
 content-type: application/json
 
  {
@@ -19,7 +22,7 @@ content-type: application/json
   }
 
 ###
-PUT http://localhost:8080/mountainBikes/634a23ed61b8c75a12741dc9 HTTP/1.1
+PUT http://localhost:3000/mountainBikes/634a23ed61b8c75a12741dc9 HTTP/1.1
 content-type: application/json
 
   {
@@ -33,7 +36,7 @@ content-type: application/json
   }
 
 ###
-DELETE http://localhost:8080/mountainBikes/634a23ed61b8c75a12741dc9
+DELETE http://localhost:3000/mountainBikes/634a23ed61b8c75a12741dc9
 
 ### Render GET Week 6 
 GET https://cse341-node-project2.onrender.com/mountainBikes
