@@ -5,7 +5,7 @@ const doc = {
     title: "mountainBikes API",
     description: "Description",
   },
-  host: "localhost:8080",
+  host: "localhost:3000",
   schemes: ["http","https"],
 };
 
