@@ -12,6 +12,28 @@
     "https"
   ],
   "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/mountainBikes/": {
       "get": {
         "description": "",
@@ -66,8 +88,8 @@
           "444": {
             "description": "Connection Closed Without Response"
           },
-          "500": {
-            "description": "Internal Server Error"
+          "550": {
+            "description": ""
           }
         }
       }
