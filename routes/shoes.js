@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/shoes');
+const shoesController = require('../controllers/shoes');
 //const validation = require('../middleware/validate');
 
-router.get('/', shoeController.getAll);
+router.get('/', shoesController.getAll);
 
-router.get('/:id', shoeController.getSingle);
+router.get('/:id', shoesController.getSingle);
 
-router.post('/', shoeController.createSingle);
+router.post('/', shoesController.createSingle);
 
-router.put('/:id', shoeController.updateSingle);
+router.put('/:id', shoesController.updateSingle);
 // router.post('/', validation.saveMtb, userController.createSingle);
 
 // router.put('/:id', validation.saveMtb, userController.updateSingle);
 
-router.delete('/:id', shoeController.deleteSingle);
+router.delete('/:id', shoesController.deleteSingle);
 
 module.exports = router;
