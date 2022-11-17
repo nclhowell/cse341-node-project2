@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "CSE341 P2 mountainBikes API Featuring OAuth",
+    "title": "mountainBikes API",
     "description": "Description",
     "version": "1.0.0"
   },
