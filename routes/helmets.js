@@ -1,0 +1,32 @@
+const express = require('express');
+const router = express.Router();
+
+const helmetsController = require('../controllers/helmets');
+const validation = require('../middleware/validate');
+const app = express();
+
+require("dotenv").config();
+const {auth, requiresAuth} = require("express-openid-connect")
+
+const config = {
+    authRequired: false,
+    auth0Logout: true,
+    secret: process.env.SECRET, 
+    baseURL: process.env.BASE_URL, 
+    clientID:  process.env.CLIENT_ID, 
+    issuerBaseURL: process.env.ISSUER_BASE_URL
+  };  
+
+router.use(auth(config));
+
+router.get('/', requiresAuth(), helmetsController.getAll);
+
+router.get('/:id', requiresAuth(), helmetsController.getSingle);
+
+router.post('/', requiresAuth(), helmetsController.createSingle);
+
+router.put('/:id', requiresAuth(), helmetsController.updateSingle);
+
+router.delete('/:id', requiresAuth(), helmetsController.deleteSingle);
+
+module.exports = router;
