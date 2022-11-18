@@ -1,0 +1,20 @@
+{"_id":{"$oid":"634a144574f98f9898ebe8c6"},"manufacturer":"Yeti","model":"SB-130","discipline":"trail","frontTravel":"5-inches","rearTravel":"5-inches","brakes":"hope-hydraulic","terrainPreference":"low-gnar"}
+
+    user {
+     name: "joe"
+     email: "rookie"
+     ridingStyle: "rookie"
+     terrainPreference: "rookie"
+     recommended_bike: "Specialized Enduro"
+     recommended_shoes: "Specialized super Shoes"
+     recommended_helmet: "Specialized super helmet"
+    }
+
+    bike = Get manufacturer from bikes collection where ridingStyle = "rookie"
+    helmet = Get manufacturer from helmets collection where ridingStyle = "rookie"
+    shoes = Get manufacturer from shoes collection where ridingStyle = "rookie"
+
+
+
+    
+  

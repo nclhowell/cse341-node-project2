@@ -2,11 +2,11 @@ const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = (req, res) => {
-  // #swagger.description = "Return single shoe from collection Shoes"
+  // #swagger.description = "Return single shoe from collection shoes"
   mongodb
   .getDb()
   .db("project2")
-  .collection("Shoes")
+  .collection("shoes")
   .find()
   .toArray((err, lists) => {
     if (err) {
@@ -18,7 +18,7 @@ const getAll = (req, res) => {
 };
 
  const getSingle = async (req, res, next) => {
-    // #swagger.description = "Return single shoe from collection Shoes"
+    // #swagger.description = "Return single shoe from collection shoes"
     // Validate shoe ID
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json("must use a valid Mongo object ID to locate a shoe");
@@ -27,7 +27,7 @@ const getAll = (req, res) => {
     const result = await mongodb
       .getDb()
       .db("project2")
-      .collection("Shoes")
+      .collection("shoes")
       .find({
         _id: shoeId,
       });
@@ -47,7 +47,7 @@ const getAll = (req, res) => {
     const response = await mongodb
       .getDb()
       .db("project2")
-      .collection("Shoes")
+      .collection("shoes")
       .insertOne(newUser);
     if (response.acknowledged) {
       res.status(201).json(response);
@@ -62,7 +62,7 @@ const getAll = (req, res) => {
   };
 
   const updateSingle = async (req, res) => {
-    // #swagger.description = "Update a single Shoe in collection Shoes"
+    // #swagger.description = "Update a single Shoe in collection shoes"
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json("must use a valid Mongo object ID to update a Shoe");
     }

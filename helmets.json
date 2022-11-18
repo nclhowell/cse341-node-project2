@@ -1,0 +1,27 @@
+   "manufacturer": "Giro",
+    "model": "Gnar 2100",
+    "color": "",
+    "gender":"female",
+    "surfaceType": "black-diamond",
+    "terrainType": "dirt",
+    "terrainLevel": "difficult"
+
+   "manufacturer": "Trek",
+    "model": "Peezy Express",
+    "color": "",
+    "gender":"male",
+    "surfaceType": "bike-path",
+    "terrainType": "dirt",
+    "terrainLevel": "easy"
+
+   "manufacturer": "Specialized",
+    "model": "Trail Rat",
+    "color": "",
+    "gender":"male",
+    "surfaceType": "singletrack",
+    "terrainType": "dirt",
+    "terrainLevel": "intermediate"
+
+
+    
+  

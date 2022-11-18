@@ -1,0 +1,26 @@
+"manufacturer": "Pearl Uzumi",
+"model": "Street-Flow",
+"color": "",
+"gender":"male",
+"surfaceType": "street",
+"terrainType": "asphalt",
+"terrainLevel": "difficult"
+
+"manufacturer": "Nike",
+"model": "Gnar 2100",
+"color": "",
+"gender":"male",
+"surfaceType": "singletrack",
+"terrainType": "dirt",
+"terrainLevel": "difficult"
+
+"manufacturer": "Specialized",
+"model": "Freestyle",
+"color": "",
+"gender":"male",
+"surfaceType": "bike-path",
+"terrainType": "dirt",
+"terrainLevel": "intermediate"
+
+    
+  

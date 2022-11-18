@@ -1,46 +1,62 @@
-bikes [
-  {
-    "manufacturer": "Specialized",
-    "model": "Enduro",
-    "discipline": "enduro",
-    "frontTravel": "6-inches",
-    "rearTravel": "7-inches",
-    "ridingStyle": "rookie",
-    "terrainPreference": "hard"
-  },
-helmets [
-  {
-    "manufacturer": "Specialized super Helmet",
-    "model": "Enduro",
-    "discipline": "enduro",
-    "frontTravel": "6-inches",
-    "rearTravel": "7-inches",
-    "ridingStyle": "rookie",
-    "terrainPreference": "hard"
+"manufacturer": "Trek",
+"model": "2100",
+"color": "",
+"gender":"unisex",
+"surfaceType": "black-diamond",
+"terrainType": "dirt",
+"terrainLevel": "difficult",
+"wheel size": "27.5",
+"fun factor": "high"
 
-shoes [
-  {
-    "manufacturer": "Specialized super Shoes",
-    "model": "Enduro",
-    "discipline": "enduro",
-    "frontTravel": "6-inches",
-    "rearTravel": "7-inches",
-    "ridingStyle":  "rookie",
-    "terrainPreference": "hard"
+"manufacturer": "Specialized",
+"model": "enduro",
+"color": "",
+"gender":"unisex",
+"surfaceType": "blue",
+"terrainType": "dirt",
+"terrainLevel": "intermediate",
+"wheel size": "27.5",
+"fun factor": "high"
 
-    user {
-     name: "joe"
-     email: "rookie"
-     ridingStyle: "rookie"
-     terrainPreference: "rookie"
-     recommended_bike: "Specialized Enduro"
-     recommended_shoes: "Specialized super Shoes"
-     recommended_helmet: "Specialized super helmet"
-    }
+"manufacturer": "Walmart",
+"model": "breakfix 200",
+"color": "",
+"gender":"unisex",
+"surfaceType": "bikepath",
+"terrainType": "gravel",
+"terrainLevel": "easy",
+"wheel size": "29",
+"fun factor": "low"
 
-    bike = Get manufacturer from bikes collection where ridingStyle = "rookie"
-    helmet = Get manufacturer from helmets collection where ridingStyle = "rookie"
-    shoes = Get manufacturer from shoes collection where ridingStyle = "rookie"
+"manufacturer": "Schwinn",
+"model": "Trainer 300",
+"color": "",
+"gender":"unisex",
+"surfaceType": "bikepath",
+"terrainType": "pavement",
+"terrainLevel": "easy",
+"wheel size": "29",
+"fun factor": "medium"
+
+"manufacturer": "Pivot",
+"model": "Dudecylce 40",
+"color": "",
+"gender":"unisex",
+"surfaceType": "downhill",
+"terrainType": "dirt",
+"terrainLevel": "extreme",
+"wheel size": "27.5",
+"fun factor": "high"
+
+"manufacturer": "Intense",
+"model": "m16",
+"color": "",
+"gender":"unisex",
+"surfaceType": "bikepark",
+"terrainType": "dirt",
+"terrainLevel": "difficult",
+"wheel size": "27.5",
+"fun factor": "high"
 
 
 
