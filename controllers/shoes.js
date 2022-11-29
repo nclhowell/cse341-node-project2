@@ -44,11 +44,21 @@ const getAll = (req, res) => {
   const createSingle = async (req, res) => {
     // #swagger.description = "Create a single Shoe"
     // Note to self this one needs work 11/16/22
+    const shoes = {
+      manufacturer: req.body.manufacturer,
+      model: req.body.model,
+      color: req.body.color,
+      gender: req.body.gender,
+      surfaceType: req.body.surfaceType,
+      terrainType: req.body.terrainType,
+      terrainLevel: req.body.terrainLevel,
+    };
+    
     const response = await mongodb
       .getDb()
       .db("project2")
       .collection("shoes")
-      .insertOne(newUser);
+      .insertOne(shoes);
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
@@ -56,7 +66,7 @@ const getAll = (req, res) => {
         .status(550)
         .json(
           response.error ||
-            "Some error occurred while creating the new user."
+            "Some error occurred while creating the new shoe."
         );
     }
   };
