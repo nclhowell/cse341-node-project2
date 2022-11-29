@@ -1,5 +1,7 @@
 const mongodb = require("../db/connect");
 
+//Purpose is to provide the helpers/functions.js with a bike collection, helmet collection and shoe collection
+
 const getBike = async (req, res, next, bikeInfo) => {
     const result = await mongodb
       .getDb()
