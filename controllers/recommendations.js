@@ -1,5 +1,4 @@
 const mongodb = require("../db/connect");
-//const ObjectId = require("../helpers/functions");
 
 const getBike = async (req, res, next, bikeInfo) => {
     const result = await mongodb
