@@ -76,19 +76,21 @@ const getAll = (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json("must use a valid Mongo object ID to update a Shoe");
     }
-    const userId = new ObjectId(req.params.id);
-    const newUser = {
-        given_name: req.body.given_name,
-        family_name: req.body.family_name,
-        nickname: req.body.nickname,
-        name: req.body.name,
-        email: req.body.email
+    const shoeId = new ObjectId(req.params.id);
+    const shoes = {
+      manufacturer: req.body.manufacturer,
+      model: req.body.model,
+      color: req.body.color,
+      gender: req.body.gender,
+      surfaceType: req.body.surfaceType,
+      terrainType: req.body.terrainType,
+      terrainLevel: req.body.terrainLevel,
       };
     const response = await mongodb
       .getDb()
       .db("project2")
-      .collection("userData")
-      .replaceOne({ _id: userId }, newUser);
+      .collection("shoes")
+      .replaceOne({ _id: shoeId }, shoes);
     console.log(response);
     if ((response.modifiedCount = 1)) {
       res.status(204).send();
@@ -103,16 +105,16 @@ const getAll = (req, res) => {
   };
 
   const deleteSingle = async (req, res) => {
-    // #swagger.description = "Delete a single User in collection Users"
+    // #swagger.description = "Delete a single shoe in collection shoes"
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json("must use a valid Mongo object ID to delete a User");
     }
-    const userId = new ObjectId(req.params.id);
+    const shoeId = new ObjectId(req.params.id);
     const response = await mongodb
       .getDb()
       .db("project2")
-      .collection("userData")
-      .deleteOne({ _id: userId }, true);
+      .collection("shoes")
+      .deleteOne({ _id: shoeId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();
@@ -121,7 +123,7 @@ const getAll = (req, res) => {
         .status(500)
         .json(
           response.error ||
-            "Some error occurred while deleting the user."
+            "Some error occurred while deleting the shoe."
         );
     }
   };
