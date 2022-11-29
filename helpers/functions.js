@@ -1,11 +1,11 @@
 //Purpose: return a list of objects [{bike}, {helmet}, {shoes}]
-const fooController = require('../controllers/foo');
+const recommendationsController = require('../controllers/recommendations');
 
 function userRecommendations(bikePref, helmetPref, shoesPref) {
     let userItems = [];
-    let bike = fooController.getBike(bikePref);
-    let helmet = fooController.getHelmet(helmetPref);
-    let shoes = fooController.getShoes(shoesPref);
+    let bike = recommendationsController.getBike(bikePref);
+    let helmet = recommendationsController.getHelmet(helmetPref);
+    let shoes = recommendationsController.getShoes(shoesPref);
 
     userItems.push(bike);
     userItems.push(helmet);
