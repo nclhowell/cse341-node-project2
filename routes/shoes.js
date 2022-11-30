@@ -8,9 +8,9 @@ router.get('/', requiresAuth(), shoesController.getAll);
 
 router.get('/:id', requiresAuth(), shoesController.getSingle);
 
-router.post('/', requiresAuth(), validation.createUpdateShoes, shoesController.createSingle);
+router.post('/', requiresAuth(), validation.createUpdate, shoesController.createSingle);
 
-router.put('/:id', requiresAuth(), validation.createUpdateShoes, shoesController.updateSingle);
+router.put('/:id', requiresAuth(), validation.createUpdate, shoesController.updateSingle);
 
 router.delete('/:id', requiresAuth(), shoesController.deleteSingle);
 

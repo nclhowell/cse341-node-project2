@@ -23,9 +23,9 @@ router.get('/', requiresAuth(), helmetsController.getAll);
 
 router.get('/:id', requiresAuth(), helmetsController.getSingle);
 
-router.post('/', requiresAuth(), helmetsController.createSingle);
+router.post('/', requiresAuth(), validation.createUpdate, helmetsController.createSingle);
 
-router.put('/:id', requiresAuth(), helmetsController.updateSingle);
+router.put('/:id', requiresAuth(), validation.createUpdate, helmetsController.updateSingle);
 
 router.delete('/:id', requiresAuth(), helmetsController.deleteSingle);
 

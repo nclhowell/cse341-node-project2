@@ -23,7 +23,7 @@ const saveMtb = (req, res, next) => {
   });
 };
 
-const createUpdateShoes = (req, res, next) => {
+const createUpdate = (req, res, next) => {
   const validationRule = {
     manufacturer: 'required|string',
     model: 'required|string',
@@ -46,5 +46,5 @@ const createUpdateShoes = (req, res, next) => {
 };
 
 module.exports = {
-  saveMtb, createUpdateShoes
+  saveMtb, createUpdate
 };
