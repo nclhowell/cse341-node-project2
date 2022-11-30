@@ -43,7 +43,6 @@ const getAll = (req, res) => {
 
   const createSingle = async (req, res) => {
     // #swagger.description = "Create a single Shoe"
-    // Note to self this one needs work 11/16/22
     const shoes = {
       manufacturer: req.body.manufacturer,
       model: req.body.model,
