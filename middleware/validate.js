@@ -23,6 +23,28 @@ const saveMtb = (req, res, next) => {
   });
 };
 
+const createUpdateShoes = (req, res, next) => {
+  const validationRule = {
+    manufacturer: 'required|string',
+    model: 'required|string',
+    gender: 'required|string',
+    surfaceType: 'required|string',
+    terrainType: 'required|string',
+    terrainLevel: 'required|string',
+  };  
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(444).send({
+        success: false,
+        message: 'Please enter string values for all fields',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
 module.exports = {
-  saveMtb
+  saveMtb, createUpdateShoes
 };
