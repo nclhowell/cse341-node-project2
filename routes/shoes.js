@@ -2,15 +2,16 @@ const express = require('express');
 const router = express.Router();
 const shoesController = require('../controllers/shoes');
 const validation = require('../middleware/validate');
+const {auth, requiresAuth} = require("express-openid-connect");
 
-router.get('/', shoesController.getAll);
+router.get('/', requiresAuth(), shoesController.getAll);
 
-router.get('/:id', shoesController.getSingle);
+router.get('/:id', requiresAuth(), shoesController.getSingle);
 
-router.post('/', validation.createUpdateShoes, shoesController.createSingle);
+router.post('/', requiresAuth(), validation.createUpdateShoes, shoesController.createSingle);
 
-router.put('/:id', validation.createUpdateShoes, shoesController.updateSingle);
+router.put('/:id', requiresAuth(), validation.createUpdateShoes, shoesController.updateSingle);
 
-router.delete('/:id', shoesController.deleteSingle);
+router.delete('/:id', requiresAuth(), shoesController.deleteSingle);
 
 module.exports = router;
