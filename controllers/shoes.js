@@ -2,7 +2,7 @@ const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = (req, res) => {
-  // #swagger.description = "Return single shoe from collection shoes"
+  // #swagger.description = "Return all shoes from collection shoes"
   mongodb
   .getDb()
   .db("project2")
@@ -106,7 +106,7 @@ const getAll = (req, res) => {
   const deleteSingle = async (req, res) => {
     // #swagger.description = "Delete a single shoe in collection shoes"
     if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json("must use a valid Mongo object ID to delete a User");
+      res.status(400).json("must use a valid Mongo object ID to delete a shoe");
     }
     const shoeId = new ObjectId(req.params.id);
     const response = await mongodb
