@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"This is only a test\" && exit 1",
+    "test": "jest",
     "dev": "nodemon server.js",
     "start": "node server.js",
     "newswag": "node swagger.js"
@@ -33,7 +33,9 @@
     "validatorjs": "^3.22.1"
   },
   "devDependencies": {
+    "jest": "^29.3.1",
     "nodemon": "^2.0.19",
+    "supertest": "^6.3.1",
     "swagger-autogen": "^2.22.0"
   }
 }

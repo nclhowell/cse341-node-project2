@@ -127,10 +127,15 @@ const getAll = (req, res) => {
     }
   };
 
+  function shoesUnitTest() {
+    return "Shoes controller is working...";
+  }
+
   module.exports = {
     getAll,
     getSingle,
     createSingle,
     updateSingle,
     deleteSingle,
+    shoesUnitTest
   };
