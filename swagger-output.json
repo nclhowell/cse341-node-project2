@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http",
@@ -340,7 +340,7 @@
     },
     "/shoes/": {
       "get": {
-        "description": "Return single shoe from collection Shoes",
+        "description": "Return all shoes from collection shoes",
         "produces": [
           "application/json"
         ],
@@ -353,10 +353,44 @@
       },
       "post": {
         "description": "Create a single Shoe",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "manufacturer": {
+                  "example": "any"
+                },
+                "model": {
+                  "example": "any"
+                },
+                "color": {
+                  "example": "any"
+                },
+                "gender": {
+                  "example": "any"
+                },
+                "surfaceType": {
+                  "example": "any"
+                },
+                "terrainType": {
+                  "example": "any"
+                },
+                "terrainLevel": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "444": {
+            "description": "Connection Closed Without Response"
           },
           "550": {
             "description": ""
@@ -366,7 +400,7 @@
     },
     "/shoes/{id}": {
       "get": {
-        "description": "Return single shoe from collection Shoes",
+        "description": "Return single shoe from collection shoes",
         "produces": [
           "application/json"
         ],
@@ -388,7 +422,7 @@
         }
       },
       "put": {
-        "description": "Update a single Shoe in collection Shoes",
+        "description": "Update a single Shoe in collection shoes",
         "parameters": [
           {
             "name": "id",
@@ -402,19 +436,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "given_name": {
+                "manufacturer": {
                   "example": "any"
                 },
-                "family_name": {
+                "model": {
                   "example": "any"
                 },
-                "nickname": {
+                "color": {
                   "example": "any"
                 },
-                "name": {
+                "gender": {
                   "example": "any"
                 },
-                "email": {
+                "surfaceType": {
+                  "example": "any"
+                },
+                "terrainType": {
+                  "example": "any"
+                },
+                "terrainLevel": {
                   "example": "any"
                 }
               }
@@ -428,13 +468,16 @@
           "400": {
             "description": "Bad Request"
           },
+          "444": {
+            "description": "Connection Closed Without Response"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       },
       "delete": {
-        "description": "Delete a single User in collection Users",
+        "description": "Delete a single shoe in collection shoes",
         "parameters": [
           {
             "name": "id",
@@ -458,19 +501,70 @@
     },
     "/helmets/": {
       "get": {
-        "description": "",
+        "description": "Return all helmets from collection helmets",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "post": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
+        "description": "Create a single helmet",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "manufacturer": {
+                  "example": "any"
+                },
+                "model": {
+                  "example": "any"
+                },
+                "color": {
+                  "example": "any"
+                },
+                "gender": {
+                  "example": "any"
+                },
+                "surfaceType": {
+                  "example": "any"
+                },
+                "terrainType": {
+                  "example": "any"
+                },
+                "terrainLevel": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "444": {
+            "description": "Connection Closed Without Response"
+          },
+          "550": {
+            "description": ""
+          }
+        }
       }
     },
     "/helmets/{id}": {
       "get": {
-        "description": "",
+        "description": "Return single helmet from collection helmets",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -479,22 +573,72 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
       },
       "put": {
-        "description": "",
+        "description": "Update a single helmet in collection helmets",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "manufacturer": {
+                  "example": "any"
+                },
+                "model": {
+                  "example": "any"
+                },
+                "color": {
+                  "example": "any"
+                },
+                "gender": {
+                  "example": "any"
+                },
+                "surfaceType": {
+                  "example": "any"
+                },
+                "terrainType": {
+                  "example": "any"
+                },
+                "terrainLevel": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
-        "responses": {}
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "444": {
+            "description": "Connection Closed Without Response"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       },
       "delete": {
-        "description": "",
+        "description": "Delete a single helmet in collection helmets",
         "parameters": [
           {
             "name": "id",
@@ -503,7 +647,17 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     }
   }
