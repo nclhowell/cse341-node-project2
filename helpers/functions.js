@@ -13,3 +13,7 @@ function userRecommendations(bikePref, helmetPref, shoesPref) {
 
     return userItems;
 }
+
+module.exports = {
+    userRecommendations,
+  };
