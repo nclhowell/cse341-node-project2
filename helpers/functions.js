@@ -2,7 +2,7 @@
 const recommendationsController = require('../controllers/recommendations');
 
 let displayUserRecommendations = async (req, res, next) => {
-    // Validate helmet ID
+    // get the bike, helmet, shoes from the GET input assign it's values to the userRecommendations
     if (!ObjectId.isValid(req.params.bike)) {
       res.status(400).json("must use a valid bike info");
     }
@@ -16,8 +16,7 @@ let displayUserRecommendations = async (req, res, next) => {
     let helmetFeedback = new ObjectId(req.params.helmet);
     let shoesFeedback = new ObjectId(req.params.shoes);
     
-    userRecommendations(bikeFeedback, helmetFeedback, shoesFeedback);
-    
+    userRecommendations(bikeFeedback, helmetFeedback, shoesFeedback);    
   };
 
 function userRecommendations(bikePref, helmetPref, shoesPref) {
