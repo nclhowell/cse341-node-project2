@@ -55,4 +55,9 @@ function getShoes(shoeInfo){
       };
     return shoesCollection
 }
-  
+
+module.exports = {
+  getBike,
+  getHelmet,
+  getShoes
+};
