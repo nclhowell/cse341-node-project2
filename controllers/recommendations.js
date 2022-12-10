@@ -56,8 +56,40 @@ function getShoes(shoeInfo){
     return shoesCollection
 }
 
+const foo = async (req, res, next) => {
+  // #swagger.description = "foo"
+  // foo
+  let userItems = [];
+  
+  if (!ObjectId.isValid(req.params.bike)) {
+    res.status(400).json("must use a valid bike info");
+  }
+  if (!ObjectId.isValid(req.params.helmet)) {
+      res.status(400).json("must use a valid helmet info");
+    }
+  if (!ObjectId.isValid(req.params.shoes)) {
+      res.status(400).json("must use a valid shoes info");
+    }
+  //getting bike,helmet,shoe from user input
+  let bikeFeedback = new ObjectId(req.params.bike);
+  let helmetFeedback = new ObjectId(req.params.helmet);
+  let shoesFeedback = new ObjectId(req.params.shoes);
+  
+  //retrieving bike,helmet,shoes collection
+  let bike = getShoes(bikeFeedback);
+  let helmet = getShoes(helmetFeedback);
+  let shoes = getShoes(shoesFeedback);
+   
+  userItems.push(bike);
+  userItems.push(helmet);
+  userItems.push(shoes);
+  
+  return userItems;
+};
+
 module.exports = {
   getBike,
   getHelmet,
-  getShoes
+  getShoes,
+  foo,
 };
