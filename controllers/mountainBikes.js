@@ -168,10 +168,15 @@ const getAll = (req, res) => {
     }
   };
 
+  function bikesUnitTest() {
+    return "Bikes controller is working...";
+  }
+
   module.exports = {
     getAll,
     getSingle,
     createSingle,
     updateSingle,
     deleteSingle,
+    bikesUnitTest
   };

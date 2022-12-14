@@ -1,95 +1,89 @@
 const mongodb = require("../db/connect");
+const ObjectId = require("mongodb").ObjectId;
 
-//Purpose is to provide the helpers/functions.js with a bike collection, helmet collection and shoe collection
-
-function getBike(bikeInfo) {
-    const bikeCollection = async (req, res, next) => {
-        const result = await mongodb
-          .getDb()
-          .db("project2")
-          .collection("mountainBikes")
-          .find({"terrainLevel": bikeInfo,});
-        result.toArray((err, result) => {
-          if (err) {
-            res.status(400).json({ message: err });
-          }
-          res.setHeader("Content-Type", "application/json");
-          res.status(200).json(result[0]);
-        });
-      };
-    return bikeCollection;
-}
-
-function getHelmet(helmetInfo){
-    const helmetCollection = async (req, res, next) => {
-        const result = await mongodb
-          .getDb()
-          .db("project2")
-          .collection("helmets")
-          .find({"terrainLevel": helmetInfo,});
-        result.toArray((err, result) => {
-          if (err) {
-            res.status(400).json({ message: err });
-          }
-          res.setHeader("Content-Type", "application/json");
-          res.status(200).json(result[0]);
-        });
-      };
-    return helmetCollection;
-}
-
-function getShoes(shoeInfo){
-    const shoesCollection = async (req, res, next) => {
-        const result = await mongodb
-          .getDb()
-          .db("project2")
-          .collection("shoes")
-          .find({"terrainLevel": shoeInfo,});
-        result.toArray((err, result) => {
-          if (err) {
-            res.status(400).json({ message: err });
-          }
-          res.setHeader("Content-Type", "application/json");
-          res.status(200).json(result[0]);
-        });
-      };
-    return shoesCollection
-}
-
-const foo = async (req, res, next) => {
-  // #swagger.description = "foo"
-  // foo
-  let userItems = [];
+const getRecomendation = (req, res) => {
+  // #swagger.description = "Return user recomendation data"
   
-  if (!ObjectId.isValid(req.params.bike)) {
-    res.status(400).json("must use a valid bike info");
+  // Getting parameters
+  const recomendationParameters = {
+    surfaceType: req.params.surfaceType,
+    terrainType: req.params.terrainType,
+    terrainLevel: req.params.terrainLevel
+  };
+  
+  // To return the recommendations
+  let recommendationsArray = [];
+
+  // Query and filter on bikes collection
+  mongodb
+  .getDb()
+  .db("project2")
+  .collection("mountainBikes")
+  .find({
+    terrainLevel: recomendationParameters.terrainLevel,
+  })
+  .toArray((err, lists) => {
+  if (err) {
+    console.log("Something was wrong getting helmets!");
+    res.statu(400).json({ message: err });
   }
-  if (!ObjectId.isValid(req.params.helmet)) {
-      res.status(400).json("must use a valid helmet info");
-    }
-  if (!ObjectId.isValid(req.params.shoes)) {
-      res.status(400).json("must use a valid shoes info");
-    }
-  //getting bike,helmet,shoe from user input
-  let bikeFeedback = new ObjectId(req.params.bike);
-  let helmetFeedback = new ObjectId(req.params.helmet);
-  let shoesFeedback = new ObjectId(req.params.shoes);
-  
-  //retrieving bike,helmet,shoes collection
-  let bike = getShoes(bikeFeedback);
-  let helmet = getShoes(helmetFeedback);
-  let shoes = getShoes(shoesFeedback);
-   
-  userItems.push(bike);
-  userItems.push(helmet);
-  userItems.push(shoes);
-  
-  return userItems;
+    // Recollecting data
+    lists.forEach(e => e.collectionName = "bikes");    
+    recommendationsArray = recommendationsArray.concat(lists);       
+    console.log(recommendationsArray); 
+  });
+
+  // Query and filter on shoes collection
+  mongodb
+  .getDb()
+  .db("project2")
+  .collection("shoes")
+  .find({
+    surfaceType: recomendationParameters.surfaceType,
+    terrainType: recomendationParameters.terrainType,
+    terrainLevel: recomendationParameters.terrainLevel
+  }
+  )
+  .toArray((err, lists) => {
+  if (err) {
+    console.log("Something was wrong getting helmets!");
+    res.statu(400).json({ message: err });
+  }
+    // Recollecting data
+    lists.forEach(e => e.collectionName = "shoes");
+    recommendationsArray = [].concat(lists, recommendationsArray);      
+  });
+
+  // Query and filter on helmets collection
+  mongodb
+  .getDb()
+  .db("project2")
+  .collection("helmets")
+  .find({
+    surfaceType: recomendationParameters.surfaceType,
+    terrainType: recomendationParameters.terrainType,
+    terrainLevel: recomendationParameters.terrainLevel
+  }
+  )
+  .toArray((err, lists) => {
+  if (err) {
+      console.log("Something was wrong getting helmets!");
+      res.statu(400).json({ message: err });      
+  }
+    // Recollecting data
+    lists.forEach(e => e.collectionName = "helmets"); 
+    recommendationsArray = [].concat(lists, recommendationsArray);  
+    console.log(recommendationsArray);      
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(recommendationsArray);
+  });
 };
 
+function usersRecomendationUnitTest() {
+  return "Recomendation users is working...";
+}
+
 module.exports = {
-  getBike,
-  getHelmet,
-  getShoes,
-  foo,
+  getRecomendation,
+  usersRecomendationUnitTest
 };

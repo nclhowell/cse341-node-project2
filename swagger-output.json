@@ -659,6 +659,39 @@
           }
         }
       }
+    },
+    "/userRecommendations/{surfaceType}/{terrainType}/{terrainLevel}": {
+      "get": {
+        "description": "Return user recomendation data",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "surfaceType",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "terrainType",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "terrainLevel",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   }
 }

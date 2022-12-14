@@ -126,10 +126,15 @@ const getAll = (req, res) => {
     }   
   };
 
+  function helmetsUnitTest() {
+    return "Helmets controller is working...";
+  }
+
   module.exports = {
     getAll,
     getSingle,
     createSingle,
     updateSingle,
     deleteSingle,
+    helmetsUnitTest
   };

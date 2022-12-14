@@ -123,10 +123,15 @@ const getAllUser = (req, res) => {
     }
   };
 
+  function usersUnitTest() {
+    return "Users controller is working...";
+  }
+
   module.exports = {
     getAllUser,
     getSingleUser,
     createSingleUser,
     updateSingleUser,
     deleteSingleUser,
+    usersUnitTest
   };

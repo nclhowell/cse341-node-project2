@@ -1,13 +1,9 @@
 const express = require('express');
 const router = express.Router();
-
-//const getUserInfo = require('../helpers/functions');
-const getUserInfo = require('../controllers/recommendations');
-const validation = require('../middleware/validate');
-const app = express();
-
+const userRecommendationController = require('../controllers/recommendations');
 
 require("dotenv").config();
+
 const {auth, requiresAuth} = require("express-openid-connect")
 
 const config = {
@@ -21,7 +17,6 @@ const config = {
 
 router.use(auth(config));
 
-//router.get('/:bike,:helmet,:shoes', requiresAuth(), getUserInfo.displayUserRecommendations);
-router.get('/:bike,:helmet,:shoes', requiresAuth(), getUserInfo.foo);
+router.get('/:surfaceType/:terrainType/:terrainLevel', requiresAuth(), userRecommendationController.getRecomendation);
 
 module.exports = router;
