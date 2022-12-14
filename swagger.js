@@ -5,7 +5,7 @@ const doc = {
     title: "Mountain Bikes API",
     description: "Description",
   },
-  host: "https://final-project-team-supreme.onrender.com/",
+  host: "final-project-team-supreme.onrender.com",
   schemes: ["http","https"],
 };
 

@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "https://final-project-team-supreme.onrender.com/",
+  "host": "final-project-team-supreme.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",
