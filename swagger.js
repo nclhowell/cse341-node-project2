@@ -2,10 +2,10 @@ const swaggerAutogen = require("swagger-autogen")();
 
 const doc = {
   info: {
-    title: "mountainBikes API",
+    title: "Mountain Bikes API",
     description: "Description",
   },
-  host: "localhost:3000",
+  host: "https://final-project-team-supreme.onrender.com/",
   schemes: ["http","https"],
 };
 
